@@ -24,7 +24,8 @@ namespace RahRahRah.Repos
             Ajouter(@"Essai n° un.", "Ceci est un essai super le fun.", "François Lépine");
             Ajouter(@"Essai n° deux.", "Héhé?", "François Lépine");
             var parent = Ajouter(@"Essai n° trois.", "Après avoir lu l'article, j'me suis pris un bon rhum", "François Lépine");
-            Repondre(parent.Id, "Hic!", "Z't'ai zune bonne idéeeeeeeee", "François Lépine");
+            var reponseDeReponse = Repondre(parent.Id, "Hic!", "Z't'ai zune bonne idéeeeeeeee", "François Lépine");
+            Repondre(reponseDeReponse.Id, "Ouffff!", "Je suis ajeun, enfin!", "François Lépine");
         }
 
         /// <summary>
@@ -66,10 +67,11 @@ namespace RahRahRah.Repos
         /// <returns>Publication.</returns>
         public IPublication Repondre(int id, string titre, string message, string publicateur)
         {
-            var publicationParent = Obtenir(id);
+            var publicationParent = _publications.SingleOrDefault(p => p.Id == id);
 
             var pub = Creer(titre, message, publicateur, true);
 
+            _publications.Add(pub);
             publicationParent.Reponses.Add(pub);
 
             return pub;

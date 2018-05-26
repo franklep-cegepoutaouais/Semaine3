@@ -1,0 +1,16 @@
+﻿@model RahRahRah.Models.Interfaces.IPublication
+@{
+    ViewBag.Title = "Rah Rah Rah";
+}
+<div><h2>@Model.Titre</h2></div>
+<hr />
+<div><h3>@Model.Message</h3></div>
+<div>@Model.Creation</div>
+
+@foreach (var reponse in Model.Reponses)
+{
+    <div><h2>@reponse.Titre</h2></div>
+    <hr />
+    <div><h3>@reponse.Message</h3></div>
+    <div>@reponse.Creation</div>
+}
