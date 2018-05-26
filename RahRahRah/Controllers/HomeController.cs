@@ -1,4 +1,5 @@
-﻿using RahRahRah.Repos.Interfaces;
+﻿using RahRahRah.Repos;
+using RahRahRah.Repos.Interfaces;
 using System.Web.Mvc;
 
 namespace RahRahRah.Controllers
@@ -14,7 +15,7 @@ namespace RahRahRah.Controllers
         /// HACK: Constructeur par défaut. À supprimer quand on utilisera l'injection de dépendences.
         /// </summary>
         public HomeController()
-            //: this(new RepoPublications())
+            : this(new RepoPublications())
         {
         }
 

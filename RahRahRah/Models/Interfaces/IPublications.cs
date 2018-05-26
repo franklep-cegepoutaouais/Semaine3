@@ -2,7 +2,7 @@
 
 namespace RahRahRah.Models.Interfaces
 {
-    public interface IPublications : IEnumerable<IPublication>
+    public interface IPublications : ICollection<IPublication>
     {
     }
 }

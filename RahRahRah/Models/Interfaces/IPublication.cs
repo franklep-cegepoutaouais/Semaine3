@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace RahRahRah.Models.Interfaces
 {
@@ -15,6 +14,8 @@ namespace RahRahRah.Models.Interfaces
 
         DateTime Creation { get; }
 
-        IEnumerable<IPublication> Reponses { get; }
+        IPublications Reponses { get; }
+
+        bool EstReponse { get; }
     }
 }
