@@ -1,0 +1,19 @@
+﻿@model RahRahRah.Models.Interfaces.IPublications
+@{
+    ViewBag.Title = "Rah Rah Rah";
+}
+<table>
+    <tbody>
+        @foreach (var pub in Model)
+        {
+            <tr>
+                <td>
+                    <div><h2>@pub.Titre</h2></div>
+                    <hr />
+                    <div><h3>@pub.Message</h3></div>
+                    <div>@pub.Creation</div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
