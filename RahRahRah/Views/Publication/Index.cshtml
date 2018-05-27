@@ -7,10 +7,10 @@
 <div><h3>@Model.Message</h3></div>
 <div>@Model.Creation</div>
 
+<div style="margin-left: 2em;">
 @foreach (var reponse in Model.Reponses)
 {
-    <div><h2>@reponse.Titre</h2></div>
-    <hr />
-    <div><h3>@reponse.Message</h3></div>
+    <div><h4>@reponse.Message</h4></div>
     <div>@reponse.Creation</div>
 }
+</div>
